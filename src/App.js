@@ -13,15 +13,15 @@ const [awayScore, setAwayScore] = useState(0);
       <section className="scoreboard">
         <div className="topRow">
           <div className="home">
-            <h2 className="home__name">Lions</h2>
+            <h2 className="home__name">RSA</h2>
 
             {/* TODO STEP 3 - We need to change the hardcoded values in these divs to accept dynamic values from our state. */}
 
             <div className="home__score">{homeScore}</div>
           </div>
-          <div className="timer">00:03</div>
+          <div className="timer">80:00</div>
           <div className="away">
-            <h2 className="away__name">Tigers</h2>
+            <h2 className="away__name">ENG</h2>
             <div className="away__score">{awayScore}</div>
           </div>
         </div>
@@ -32,29 +32,41 @@ const [awayScore, setAwayScore] = useState(0);
           {/* TODO STEP 4 - Now we need to attach our state setter functions to click listeners. */}
           <button 
             className="homeButtons__touchdown"
-            onClick={() => setHomeScore(homeScore + 7)}
+            onClick={() => setHomeScore(homeScore + 5)}
             >
-              Home Touchdown
+              Home Try
           </button>
           <button 
             className="homeButtons__fieldGoal"
+            onClick={() => setHomeScore(homeScore + 2)}
+            >
+              Home Conversion
+          </button>
+          <button 
+            className="homeButtons__penalty"
             onClick={() => setHomeScore(homeScore + 3)}
             >
-              Home Field Goal
+              Home Penalty
           </button>
         </div>
         <div className="awayButtons">
           <button 
             className="awayButtons__touchdown"
-            onClick={() => setAwayScore(awayScore + 7)}
+            onClick={() => setAwayScore(awayScore + 5)}
             >
-              Away Touchdown
+            Away Try
           </button>
           <button 
           className="awayButtons__fieldGoal"
-          onClick={() => setAwayScore(awayScore + 3)}
-          >
-            Away Field Goal
+            onClick={() => setAwayScore(awayScore + 2)}
+            >
+            Away Conversion
+          </button>
+          <button 
+            className="awayButtons__penalty"
+            onClick={() => setAwayScore(awayScore + 3)}
+            >
+            Away Penalty
           </button>
         </div>
       </section>
